@@ -50,4 +50,8 @@ public class UserController {
 		return "User deleted with id : " + id;
 	}
 
+	@GetMapping("/findByName/{name}")
+	public List<User> findByName(@PathVariable String name) {
+		return repository.findByName(name);
+	}
 }
